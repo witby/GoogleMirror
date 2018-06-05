@@ -27,13 +27,12 @@ Info_font_prefix="\033[32m" && Error_font_prefix="\033[31m" && Info_background_p
 #获取本机ip
 local_host="`hostname --fqdn`"
 
-#安装Google镜像函数,本函数技术支持:感谢以下Toyo
+#安装Google镜像函数-Toyo
 #=================================================
 #       System Required: CentOS/Debian/Ubuntu
 #       Description: Caddy Install
 #       Version: 1.0.7
 #       Author: Toyo
-#       Blog: https://doub.io/shell-jc1/
 #=================================================
 installGoogle(){
     check_sys(){
