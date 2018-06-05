@@ -15,7 +15,7 @@
 相关视频
 ========
 [![Watch the video](./GoogleImages-PPT.png)](https://pan.ilaok.com/index.php/s/Xya2RQKWx6L8q4N)
->如果视频无法部分请下载观看:https://pan.ilaok.com/index.php/s/Xya2RQKWx6L8q4N
+>如果视频无法播放请下载观看:https://pan.ilaok.com/index.php/s/Xya2RQKWx6L8q4N
 
 wget 下载
 =========
