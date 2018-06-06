@@ -531,7 +531,7 @@ if [[ ${release} == "centos" ]]; then
     ufw disable
 fi
 echo -e "${Info} : OutlineServerinstalled successfully！"
-echo -e "${Info}  : The firewall has been closed."
+echo -e "${Info} : The firewall has been closed."
 echo -e "${Info} : Good luck！"
 
 
