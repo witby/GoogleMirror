@@ -2,24 +2,28 @@
 #linux上安装Google OUTLINE脚本
 #Author coding QQ2420498526
 ##如果想修改源文件请保留以上几行信息，谢谢开源的动力就是看着我写的轮子别人拿去使用还把我名字留在上面！！！！！
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+
+echo -e "\033[36m =================================================================================================\033[0m"
+echo -e "\033[36m +                          ___        _   _ _                                                   +\033[0m"
+echo -e "\033[36m +                         / _ \ _   _| |_| (_)_ __   ___                                        +\033[0m"
+echo -e "\033[36m +                        | | | | | | | __| | | '_ \ / _ \                                       +\033[0m"
+echo -e "\033[36m +                        | |_| | |_| | |_| | | | | |  __/                                       +\033[0m"
+echo -e "\033[36m +                         \___/ \__,_|\__|_|_|_| |_|\___|   Server Install Tools                +\033[0m"
+echo -e "\033[33m +                            Version：2.0 Release 2018                                          +\033[0m"
+echo -e "\033[33m +                                Author: Coding1618                                             +\033[0m"
+echo -e "\033[33m +                       Developers E_mail：coding1618@Gmail.com                                 +\033[0m"
+echo -e "\033[33m +                             Blog：https://ilaok.com                                           +\033[0m"
+echo -e "\033[36m =================================================================================================\033[0m"
 
 
-echo -e "\033[36m                           ___        _   _ _            \033[0m"
-echo -e "\033[36m                          / _ \ _   _| |_| (_)_ __   ___  \033[0m"
-echo -e "\033[36m                         | | | | | | | __| | | '_ \ / _ \ \033[0m"
-echo -e "\033[36m                         | |_| | |_| | |_| | | | | |  __/ \033[0m"
-echo -e "\033[36m                          \___/ \__,_|\__|_|_|_| |_|\___|   Server Tnstall Tools \033[0m"
-echo -e "\033[33m                         Version：2.0 Release 2018 \033[0m"
-echo -e "\033[33m                            Bug collect QQ：2420498526. \033[0m"
-echo -e "\033[33m                       Developers E_mail：coding1618@Gmail.com \033[0m"
-echo -e "\033[33m                               Blog：https://ilaok.com \033[0m"
-echo -e "\033[36m ======================================================================================================================\033[0m"
 
 
-
-#获取本机ip
-local_host="`hostname --fqdn`"
-
+Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
+Info="${Green_font_prefix}[info]${Font_color_suffix}"
+Error="${Red_font_prefix}[error]${Font_color_suffix}"
+Tip="${Green_font_prefix}[warning]${Font_color_suffix}"
 
 
 
@@ -36,7 +40,9 @@ InstallGoogleOutline(){
 
 #开始执行安装
 InstallGoogleOutline
-#这里引入了GoogleJigsawTeam的安装函数
+
+
+#这里引入了 Google Jigsaw Team 的安装函数
 
 
 # Copyright 2018 The Outline Authors
@@ -485,25 +491,47 @@ CONGRATULATIONS! Your Outline server is up and running.
 
 To manage your Outline server, please copy the following line (including curly
 brackets) into Step 2 of the Outline Manager interface:
-
-$(echo -e "\033[1;32m{\"apiUrl\":\"$(get_field_value apiUrl)\",\"certSha256\":\"$(get_field_value certSha256)\"}\033[0m")
-
+$(echo -e "\033[1;32m{\  "apiUrl\":\"$(get_field_value apiUrl)\",\"certSha256\":\"$(get_field_value certSha256)\"}\033[0m")
 ${FIREWALL_STATUS}
 END_OF_SERVER_OUTPUT
+echo -e "${Info} Crontab OutlineServerinstalled successfully！"
+if [[ ${release} == "centos" ]]; then
+    service iptables stop
+    systemctl stop firewalld
+  else
+    ufw disable
+fi
+echo -e "${Tip} Crontab The firewall has been closed."
+echo -e "${Info} Crontab Good luck！"
 } # end of install_shadowbox
+
+
+#系统版本检测
+check_sys(){
+  if [[ -f /etc/redhat-release ]]; then
+    release="centos"
+  elif cat /etc/issue | grep -q -E -i "debian"; then
+    release="debian"
+  elif cat /etc/issue | grep -q -E -i "ubuntu"; then
+    release="ubuntu"
+  elif cat /etc/issue | grep -q -E -i "centos|red hat|redhat"; then
+    release="centos"
+  elif cat /proc/version | grep -q -E -i "debian"; then
+    release="debian"
+  elif cat /proc/version | grep -q -E -i "ubuntu"; then
+    release="ubuntu"
+  elif cat /proc/version | grep -q -E -i "centos|red hat|redhat"; then
+    release="centos"
+    fi
+  bit=`uname -m`
+}
+
+
+
+
+
+check_sys
 
 # Wrapped in a function for some protection against half-downloads.
 install_shadowbox
-
-
-
-echo -e "\033[32m ======================================= \033[0m"
-echo -e "\033[32m       installed successfully!.         \033[0m"
-echo -e "\033[32m      Google Outline已经安装成功！       \033[0m"
-echo -e "\033[32m    请记得手动在防火墙里添加端口哦！！      \033[0m"
-echo -e "\033[32m       你也可以直接关闭系统防火墙！        \033[0m"
-echo -e "\033[32m   Outline官网:https://getoutline.org        \033[0m"
-echo -e "\033[32m            Good luck .                  \033[0m"
-echo -e "\033[32m ======================================= \033[0m"
-output_config "apiUrl:${PUBLIC_API_URL}"
 		
