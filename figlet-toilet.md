@@ -1,6 +1,6 @@
 # 使用 figlet 和 toilet 创建字符图案
 
-##更多Linux下开源的程序地址:https://www.zhihu.com/question/21654251/answer/52544111
+>>更多Linux下开源的程序地址:https://www.zhihu.com/question/21654251/answer/52544111
 
 ## figlet
 
