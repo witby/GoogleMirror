@@ -526,7 +526,6 @@ check_sys
 
 echo -e "\033[32m ============================================================================================ \033[0m"
 if [[ ${release} == "centos" ]]; then
-    service iptables stop
     systemctl stop firewalld
   else
     ufw disable
