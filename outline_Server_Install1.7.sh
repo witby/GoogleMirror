@@ -11,7 +11,7 @@ echo -e "\033[36m +                         / _ \ _   _| |_| (_)_ __   ___      
 echo -e "\033[36m +                        | | | | | | | __| | | '_ \ / _ \                                       +\033[0m"
 echo -e "\033[36m +                        | |_| | |_| | |_| | | | | |  __/                                       +\033[0m"
 echo -e "\033[36m +                         \___/ \__,_|\__|_|_|_| |_|\___|   Server Install Tools                +\033[0m"
-echo -e "\033[33m +                            Version：1.6 Beta 2018                                          +\033[0m"
+echo -e "\033[33m +                            Version：1.6 Beta 2018                                             +\033[0m"
 echo -e "\033[33m +                                Author: Coding1618                                             +\033[0m"
 echo -e "\033[33m +                       Developers E_mail：coding1618@Gmail.com                                 +\033[0m"
 echo -e "\033[33m +                             Blog：https://ilaok.com                                           +\033[0m"
