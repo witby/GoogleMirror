@@ -1,5 +1,7 @@
 # 使用 figlet 和 toilet 创建字符图案
 
+##更多Linux下开源的程序地址:https://www.zhihu.com/question/21654251/answer/52544111
+
 ## figlet
 
 [figlet](http://www.figlet.org/) 是一款在 geek 程序员中很流行的文字转字符图案的自由软件，在很多知名开源项目代码中都能见到它的杰作：
