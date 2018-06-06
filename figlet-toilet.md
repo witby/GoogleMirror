@@ -4,6 +4,22 @@
 
 ## figlet
 
+centos系列安装命令
+========
+
+1.Download the latest epel-release rpm from
+http://dl.fedoraproject.org/pub/epel/7/x86_64/
+
+2.Install epel-release rpm:
+```shell
+# rpm -Uvh epel-release*rpm
+````
+3.Install figlet rpm package:
+```shell
+# yum install figlet
+```
+
+
 [figlet](http://www.figlet.org/) 是一款在 geek 程序员中很流行的文字转字符图案的自由软件，在很多知名开源项目代码中都能见到它的杰作：
 
 ```
