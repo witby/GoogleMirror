@@ -17,7 +17,7 @@
 # chmod +x PyGo
 
 
-# ./PoGo
+# ./PyGo
 
 
 # 好了到此结束
