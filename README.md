@@ -19,7 +19,7 @@
 ### ☝️最后一个版本
 
 ```bash
-wget https://github.com/coding1618/Google-images-shell/raw/master/PyGo
+wget https://github.com/JDode/GoogleMirror/raw/master/PyGo
 chmod + x PyGo
 ./PyGo
 #注意：安装成功之后记得开启防火墙端口哦~ 或者关闭防火墙，下面是centos7关闭防火墙的命令！
